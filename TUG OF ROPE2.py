@@ -3,8 +3,6 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 import math
 import time
-# import json
-import os
 import random
 
 # -------------------

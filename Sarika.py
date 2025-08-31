@@ -4,8 +4,6 @@ from OpenGL.GLU import *
 import math
 import time
 import random
-
-
 # -------------------
 # Camera / scene
 # -------------------

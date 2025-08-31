@@ -109,8 +109,8 @@ def cheering(tug_val):
         glTranslatef(0.0, 0.0, 12)
         gluSphere(gluNewQuadric(), head, 10, 10)
         glPopMatrix()
-    left_jump = 20 if tug_val< 0 else 0
-    right_jump = 20 if tug_val > 0 else 0
+    left_jump = 20 if tug_val< -1 else 0
+    right_jump = 20 if tug_val > 1 else 0
     for side in (-1, +1):
         center_x = left_center_x if side < 0 else right_center_x
         jump = left_jump if side < 0 else right_jump

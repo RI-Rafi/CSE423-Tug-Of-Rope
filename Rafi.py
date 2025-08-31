@@ -12,7 +12,7 @@ TUG_LIMIT = 10
 winner = None
 game_paused = False 
 round_enabled = True
-ROUND_DURATION = 5.0
+ROUND_DURATION = 5
 round_time_left = ROUND_DURATION
 round_running = True
 left_max_stam = 100.0
@@ -91,13 +91,7 @@ def cheering(tug_val):
     body = (10, 10, 16)
     head = 12
     up_down = 5
-    colors = [
-        (0.9, 0.2, 0.65),
-        (0.1, 0.6, 1),
-        (0.1, 0.9, 0.5),
-        (1, 0.85, 0.1),
-        (0.7, 0.5, 0.95),
-    ]
+    colors = [(0.9, 0.2, 0.65),(0.1, 0.6, 1),(0.1, 0.9, 0.5),(1, 0.85, 0.1),(0.7, 0.5, 0.95),]
     def draw_person(color):
         glColor3f(*color)
         # body
@@ -291,7 +285,7 @@ def idle():
         time_since = x-last_bot_action
         base_interval = 0.18 + (1 -bot_difficulty)*0.8 
         adapt =1 + max(0, min(1.0, tug_var / float(TUG_LIMIT)))
-        interval = base_interval * (0.7 + 0.6 * (1.0 - adapt))
+        interval = base_interval * (0.7 + 0.6*(1.0-adapt))
         interval *= (0.75 + 0.5 * random.random())
         if time_since >= interval:
             if right_stamina >= stamina_cost:
@@ -337,10 +331,10 @@ def showScreen():
         bar_y = 50
         glColor3f(1, 1, 1)
         glBegin(GL_QUADS)
-        glVertex2f(200, bar_y - 10)
-        glVertex2f(800, bar_y - 10)
-        glVertex2f(800, bar_y + 10)
-        glVertex2f(200, bar_y + 10)
+        glVertex2f(200,bar_y - 10)
+        glVertex2f(800, bar_y- 10)
+        glVertex2f(800, bar_y+10)
+        glVertex2f(200,bar_y+10)
         glEnd()
         cljumped = max(-TUG_LIMIT, min(TUG_LIMIT, tug_var))
         portion = (cljumped + TUG_LIMIT) / (2 * TUG_LIMIT)

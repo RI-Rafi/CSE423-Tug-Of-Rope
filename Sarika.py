@@ -4,8 +4,7 @@ from OpenGL.GLU import *
 import math
 import time
 import random
-import json
-import os
+
 
 # -------------------
 # Camera / scene
